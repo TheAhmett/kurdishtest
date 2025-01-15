@@ -116,11 +116,12 @@ function showResult() {
     const questionContainer = document.querySelector(".soru-container")
     const optionsContainer = document.querySelector(".button-container")
     let oran;
+    
     if(totalScore <= 8){
             questionContainer.innerHTML = `<div class="custom-title">Kürt Değilsiniz🎉🥳</div>`
             optionsContainer.innerHTML = ""
     }else{
-    oran = Math.ceil((totalScore * 100) / 32)
+    oran = Math.ceil(((totalScore - questions.length) * 100) / (questions.length * 4))
 
     questionContainer.innerHTML = `<div class="custom-title">Yüzde ${oran} Kürtsünüz</div>`
     optionsContainer.innerHTML = ""
